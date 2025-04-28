@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vehicle Tracking System | Adnan Rajab</title>
+  <meta name="description" content="Real-time GPS vehicle tracking solution with encrypted monitoring">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root { 
+      --primary: #00B4D8;
+      --secondary: #6C63FF;
+      --dark: #1A1A1A;
+      --light: #F8F9FA;
+    }
+
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* Scroll Progress */
+    .progress-bar {
+      transition: width 0.3s ease;
+      height: 4px;
+    }
+
+    /* Section Animations */
+    .section-step {
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Interactive Cards */
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(108,99,255,0.2);
+      transition: all 0.3s ease;
+      border-radius: 1rem;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(108,99,255,0.2);
+    }
+
+    .comparison-card {
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid var(--primary);
+      border-radius: 1rem;
+    }
+
+    /* Tech Stack Icons */
+    .tech-stack-icon {
+      transition: transform 0.3s ease;
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 12px;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+.tech-stack-icon img
+{
+    width: 80px;
+    height: 80px;
+}
+    .tech-stack-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Progress Rings */
+    .progress-ring {
+      width: 100px;
+      height: 100px;
+    }
+
+    .progress-ring circle {
+      fill: none;
+      stroke-width: 6;
+      stroke-linecap: round;
+    }
+
+    .progress-ring__background {
+      stroke: rgba(255,255,255,0.1);
+    }
+
+    .progress-ring__progress {
+      stroke: var(--primary);
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    /* Sticky Navigation */
+    .sticky-nav {
+      position: sticky;
+      top: 100px;
+      z-index: 100;
+    }
+
+    .active-nav-item {
+      background: rgba(108,99,255,0.1) !important;
+      border-left: 3px solid var(--primary) !important;
+    }
+
+    /* Hero Section */
+    .case-study-hero {
+      background: linear-gradient(135deg, var(--dark) 0%, #2a2a2a 100%);
+      padding: 120px 0 80px;
+      margin-top: 56px;
+    }
+
+    .map-preview {
+      border: 2px solid var(--primary);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .map-preview:hover {
+      transform: scale(1.02);
+    }
+
+    /* Stats Cards */
+    .stat-card {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: var(--light) !important;
+      border-radius: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: scale(1.03);
+    }
+    .text-muted{
+        color: var(--light) !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress -->
+  <div class="progress fixed-top" style="height: 4px; z-index: 1001;">
+    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="case-study-hero text-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center mb-4">
+            <a href="index.html#projects" class="btn btn-outline-light btn-sm me-3">
+              <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="display-3 fw-bold mb-0">Smart Vehicle Tracker</h1>
+          </div>
+          <div class="d-flex gap-2 mb-4 flex-wrap">
+            <span class="badge bg-primary py-2 d-flex align-items-center">
+              <i class="fas fa-calendar me-2"></i>4 Months
+            </span>
+            <span class="badge bg-primary py-2 d-flex align-items-center">
+              <i class="fas fa-tags me-2"></i>IoT
+            </span>
+            <span class="badge bg-primary py-2 d-flex align-items-center">
+              <i class="fas fa-shield-alt me-2"></i>Security
+            </span>
+          </div>
+          <p class="lead mb-4 opacity-75">Real-time GPS monitoring system with 98% tracking accuracy and military-grade encryption</p>
+          <div class="d-flex gap-3">
+            <a href="#demo" class="btn btn-light px-4 py-2">
+              <i class="fas fa-map-marked-alt me-2"></i>Live Demo
+            </a>
+            <a href="#results" class="btn btn-outline-light px-4 py-2">
+              <i class="fas fa-chart-bar me-2"></i>View Metrics
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-5 mt-lg-0">
+          <div class="map-preview position-relative">
+            <img src="assets/vehicle-tracker.png" alt="Tracking Dashboard" 
+                 class="img-fluid shadow-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row g-5">
+      <!-- Navigation Sidebar -->
+      <div class="col-lg-4">
+        <div class="sticky-nav">
+          <div class="card bg-dark border-primary shadow-lg mb-4">
+            <div class="card-body">
+              <h5 class="text-primary mb-3">Navigation</h5>
+              <div class="list-group">
+                <a href="#challenge" class="list-group-item list-group-item-action">
+                  <i class="fas fa-exclamation-circle me-3"></i>Challenges
+                </a>
+                <a href="#tech" class="list-group-item list-group-item-action">
+                  <i class="fas fa-microchip me-3"></i>Tech Implementation
+                </a>
+                <a href="#security" class="list-group-item list-group-item-action">
+                  <i class="fas fa-shield-alt me-3"></i>Security Features
+                </a>
+                <a href="#results" class="list-group-item list-group-item-action">
+                  <i class="fas fa-chart-line me-3"></i>Results
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Sections -->
+      <div class="col-lg-8">
+        <!-- Challenges Section -->
+        <section class="section-step" id="challenge">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">1</div>
+            <h2 class="text-primary mb-0">Core Challenges</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="comparison-card bg-dark p-4 h-100">
+                <h5 class="text-primary mb-4"><i class="fas fa-traffic-cone me-2"></i>Obstacles</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-satellite-dish text-warning me-2"></i>
+                    Real-time GPS accuracy
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-lock text-danger me-2"></i>
+                    Data encryption needs
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-mobile-alt text-info me-2"></i>
+                    Cross-platform compatibility
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="comparison-card bg-dark p-4 h-100">
+                <h5 class="text-primary mb-4"><i class="fas fa-bullseye me-2"></i>Solutions</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-map-marker-check text-success me-2"></i>
+                    98% tracking accuracy
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-lock text-success me-2"></i>
+                    AES-256 encryption
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check-double text-success me-2"></i>
+                    Multi-platform support
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technical Implementation -->
+        <section class="section-step" id="tech">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">2</div>
+            <h2 class="text-primary mb-0">Technical Implementation</h2>
+          </div>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6">
+              <div class="feature-card p-4 h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-satellite fa-2x text-primary me-3"></i>
+                  <h5 class="mb-0">Real-time Tracking</h5>
+                </div>
+                <p class="text-muted">GPS/GLONASS dual-mode tracking with 2-second update intervals</p>
+                <div class="progress mt-3">
+                  <div class="progress-bar bg-primary" style="width: 98%">98% Accuracy</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-card p-4 h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                  <h5 class="mb-0">Data Security</h5>
+                </div>
+                <p class="text-muted">End-to-end encrypted data transmission with TLS 1.3</p>
+                <div class="progress mt-3">
+                  <div class="progress-bar bg-primary" style="width: 100%">100% Secure</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-light mb-4">System Architecture</h3>
+          <div class="row g-4">
+            <div class="col-12">
+              <img src="assets/vehicle-architecture.jpg" alt="System Architecture" 
+                   class="img-fluid rounded-3 shadow">
+            </div>
+          </div>
+        </section>
+
+        <!-- Security Features -->
+        <section class="section-step" id="security">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">3</div>
+            <h2 class="text-primary mb-0">Security Implementation</h2>
+          </div>
+          <div class="row g-4 text-center">
+            <div class="col-md-4">
+              <div class="progress-ring position-relative mx-auto">
+                <svg class="progress-ring" width="100" height="100">
+                  <circle class="progress-ring__background" r="45" cx="50" cy="50"/>
+                  <circle class="progress-ring__progress" r="45" cx="50" cy="50"
+                          stroke-dasharray="282.743" 
+                          stroke-dashoffset="282.743 * (1 - 1.0)"/>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <div class="h3 mb-0">100%</div>
+                  <small>Data Encryption</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="progress-ring position-relative mx-auto">
+                <svg class="progress-ring" width="100" height="100">
+                  <circle class="progress-ring__background" r="45" cx="50" cy="50"/>
+                  <circle class="progress-ring__progress" r="45" cx="50" cy="50"
+                          stroke-dasharray="282.743" 
+                          stroke-dashoffset="282.743 * (1 - 0.98)"/>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <div class="h3 mb-0">98%</div>
+                  <small>Uptime</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Business Impact -->
+        <section class="section-step" id="results">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">4</div>
+            <h2 class="text-primary mb-0">Business Impact</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">3.8x</div>
+                <p class="mb-0">Faster Response Time</p>
+                <div class="text-muted mt-2">Emergency situations</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">60%</div>
+                <p class="mb-0">Fuel Savings</p>
+                <div class="text-muted mt-2">Optimal routing</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">24/7</div>
+                <p class="mb-0">Monitoring</p>
+                <div class="text-muted mt-2">Real-time tracking</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">#1</div>
+                <p class="mb-0">Industry Rating</p>
+                <div class="text-muted mt-2">Security standards</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="section-step">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">5</div>
+            <h2 class="text-primary mb-0">Technology Stack</h2>
+          </div>
+          <div class="row g-4 text-center">
+            <div class="col-4 col-md-2">
+              <div class="tech-stack-icon">
+                <img src="assets/arduino-icon.jpg" alt="Arduino" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div class="tech-stack-icon">
+                <img src="assets/python-icon.svg" alt="Python" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div class="tech-stack-icon">
+                <img src="assets/react-icon.svg" alt="React" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+    });
+
+    // Section Animations
+    document.querySelectorAll('.section-step').forEach((section) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      observer.observe(section);
+    });
+
+    // Navigation Active State
+    const navLinks = document.querySelectorAll('.list-group-item');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 100;
+      navLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active-nav-item');
+        } else {
+          link.classList.remove('active-nav-item');
+        }
+      });
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

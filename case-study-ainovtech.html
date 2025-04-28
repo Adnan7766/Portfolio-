@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ainovtech Corporate Website | Adnan Rajab</title>
+  <meta name="description" content="Case study: Modern corporate website increasing organic traffic by 40%">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root { 
+      --primary:#6C63FF; 
+      --secondary:#00B4D8; 
+      --dark:#1A1A1A; 
+      --light:#F8F9FA; 
+    }
+
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+    .text-muted {
+        color: #fff !important;
+      }
+      .start-50{
+        padding: 10px;
+      }
+    .progress-bar {
+      transition: width 0.3s ease;
+    }
+
+    .section-step {
+      padding: 4rem 0;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(108,99,255,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(108,99,255,0.2);
+      
+    }
+
+    .comparison-card {
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid var(--primary);
+    }
+
+    .tech-stack-icon {
+      transition: transform 0.3s ease;
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 12px;
+    }
+
+    .tech-stack-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .progress-ring {
+      width: 100px;
+      height: 100px;
+    }
+
+    .progress-ring circle {
+      fill: none;
+      stroke-width: 6;
+      stroke-linecap: round;
+    }
+
+    .progress-ring__background {
+      stroke: rgba(255,255,255,0.1);
+    }
+
+    .progress-ring__progress {
+      stroke: var(--primary);
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 100px;
+    }
+
+    .active-nav-item {
+      background: rgba(108,99,255,0.1) !important;
+      border-left: 3px solid var(--primary) !important;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress -->
+  <div class="progress fixed-top" style="height: 4px; z-index: 1001;">
+    <div class="progress-bar bg-primary" role="progressbar" style="width: 0%"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="case-study-hero text-light" style="padding: 120px 0 80px;">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="d-flex align-items-center mb-4">
+            <a href="index.html#projects" class="btn btn-outline-light btn-sm me-3">
+              <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1 class="display-3 fw-bold mb-0">Ainovtech Corporate Platform</h1>
+          </div>
+          <div class="d-flex gap-2 mb-4 flex-wrap">
+            <span class="badge bg-primary py-2 d-flex align-items-center">
+              <i class="fas fa-calendar me-2"></i>6 Weeks
+            </span>
+            <span class="badge bg-primary py-2 d-flex align-items-center">
+              <i class="fas fa-tags me-2"></i>Web Design
+            </span>
+            <span class="badge bg-primary py-2 d-flex align-items-center">
+              <i class="fas fa-chart-line me-2"></i>SEO Optimization
+            </span>
+          </div>
+          <p class="lead mb-4 opacity-75">Transformed digital presence for RF solutions provider resulting in 40% traffic surge and 25% lead generation boost</p>
+          <div class="d-flex gap-3">
+            <a href="https://www.ainovtech.com" target="_blank" class="btn btn-light px-4 py-2">
+              <i class="fas fa-external-link-alt me-2"></i>Live Demo
+            </a>
+            <a href="#results" class="btn btn-outline-light px-4 py-2">
+              <i class="fas fa-chart-bar me-2"></i>View Metrics
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-5 mt-lg-0">
+          <div class="position-relative hover-zoom">
+            <div class="position-absolute w-100 h-100 bg-primary opacity-10 rounded-4"></div>
+            <img src="assets/ainovtech-website-full.png" alt="Website Preview" 
+                 class="img-fluid rounded-4 shadow-lg position-relative">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row g-5">
+      <!-- Navigation Sidebar -->
+      <div class="col-lg-4">
+        <div class="sticky-nav">
+          <div class="card bg-dark border-primary shadow-lg mb-4">
+            <div class="card-body">
+              <h5 class="text-primary mb-3">Case Study Navigation</h5>
+              <div class="list-group">
+                <a href="#challenge" class="list-group-item list-group-item-action d-flex align-items-center">
+                  <i class="fas fa-exclamation-circle me-3"></i>
+                  The Challenge
+                </a>
+                <a href="#solution" class="list-group-item list-group-item-action d-flex align-items-center">
+                  <i class="fas fa-lightbulb me-3"></i>
+                  Technical Solutions
+                </a>
+                <a href="#results" class="list-group-item list-group-item-action d-flex align-items-center">
+                  <i class="fas fa-chart-line me-3"></i>
+                  Business Impact
+                </a>
+                <a href="#tech" class="list-group-item list-group-item-action d-flex align-items-center">
+                  <i class="fas fa-code me-3"></i>
+                  Tech Stack
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Sections -->
+      <div class="col-lg-8">
+        <!-- The Challenge -->
+        <section class="section-step" id="challenge">
+          <div class="d-flex align-items-center mb-4">
+            <div class="step-number">1</div>
+            <h2 class="text-primary mb-0">Identifying the Challenges</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="comparison-card bg-dark p-4 rounded-4 h-100">
+                <h5 class="text-primary d-flex align-items-center mb-4">
+                  <i class="fas fa-arrow-down me-2"></i>
+                  Initial State
+                </h5>
+                <ul class="list-unstyled">
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="fas fa-running text-danger me-3"></i>
+                    <div>
+                      <strong>55% Bounce Rate</strong>
+                      <div class="text-muted">High visitor drop-off</div>
+                    </div>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="fas fa-tachometer-alt text-warning me-3"></i>
+                    <div>
+                      <strong>3.8s Load Time</strong>
+                      <div class="text-muted">Poor performance</div>
+                    </div>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="fas fa-mobile-alt text-info me-3"></i>
+                    <div>
+                      <strong>20% Mobile Traffic</strong>
+                      <div class="text-muted">Low mobile engagement</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="comparison-card bg-dark p-4 rounded-4 h-100">
+                <h5 class="text-primary d-flex align-items-center mb-4">
+                  <i class="fas fa-arrow-up me-2"></i>
+                  Achieved Results
+                </h5>
+                <ul class="list-unstyled">
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="fas fa-lock text-success me-3"></i>
+                    <div>
+                      <strong>35% Bounce Rate</strong>
+                      <div class="text-muted">Improved engagement</div>
+                    </div>
+                  </li>
+                  <li class="mb-3 d-flex align-items-center">
+                    <i class="fas fa-bolt text-success me-3"></i>
+                    <div>
+                      <strong>1.2s Load Time</strong>
+                      <div class="text-muted">Optimized performance</div>
+                    </div>
+                  </li>
+                  <li class="d-flex align-items-center">
+                    <i class="fas fa-chart-line text-success me-3"></i>
+                    <div>
+                      <strong>45% Mobile Traffic</strong>
+                      <div class="text-muted">Mobile-first success</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technical Solutions -->
+        <section class="section-step" id="solution">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">2</div>
+            <h2 class="text-primary mb-0">Technical Implementation</h2>
+          </div>
+          <div class="row g-4 mb-5">
+            <div class="col-md-6">
+              <div class="feature-card p-4 rounded-4 h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-mobile-alt fa-2x text-primary me-3"></i>
+                  <h5 class="mb-0">Responsive Architecture</h5>
+                </div>
+                <p class="text-muted">Implemented Bootstrap 5 grid system with custom breakpoints for 98% device coverage</p>
+                <div class="progress mt-3" style="height: 4px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 98%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="feature-card p-4 rounded-4 h-100">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="fas fa-search fa-2x text-primary me-3"></i>
+                  <h5 class="mb-0">SEO Optimization</h5>
+                </div>
+                <p class="text-muted">Structured data markup with JSON-LD and content optimization strategy</p>
+                <div class="progress mt-3" style="height: 4px;">
+                  <div class="progress-bar bg-primary" role="progressbar" style="width: 94%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="text-light mb-4">Performance Milestones</h3>
+          <div class="row g-4 text-center">
+            <div class="col-md-4">
+              <div class="progress-ring position-relative mx-auto">
+                <svg class="progress-ring" width="100" height="100">
+                  <circle class="progress-ring__background" r="45" cx="50" cy="50"/>
+                  <circle class="progress-ring__progress" r="45" cx="50" cy="50"
+                          stroke-dasharray="282.743" 
+                          stroke-dashoffset="282.743 * (1 - 0.92)"/>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <div class="h3 mb-0">92</div>
+                  <small>Performance</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="progress-ring position-relative mx-auto">
+                <svg class="progress-ring" width="100" height="100">
+                  <circle class="progress-ring__background" r="45" cx="50" cy="50"/>
+                  <circle class="progress-ring__progress" r="45" cx="50" cy="50"
+                          stroke-dasharray="282.743" 
+                          stroke-dashoffset="282.743 * (1 - 1.0)"/>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <div class="h3 mb-0">100</div>
+                  <small>Accessibility</small>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="progress-ring position-relative mx-auto">
+                <svg class="progress-ring" width="100" height="100">
+                  <circle class="progress-ring__background" r="45" cx="50" cy="50"/>
+                  <circle class="progress-ring__progress" r="45" cx="50" cy="50"
+                          stroke-dasharray="282.743" 
+                          stroke-dashoffset="282.743 * (1 - 0.94)"/>
+                </svg>
+                <div class="position-absolute top-50 start-50 translate-middle">
+                  <div class="h3 mb-0">94</div>
+                  <small>SEO Score</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Business Impact -->
+        <section class="section-step" id="results">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">3</div>
+            <h2 class="text-primary mb-0">Business Impact</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">40%</div>
+                <p class="mb-0">Organic Traffic Growth</p>
+                <div class="text-muted mt-2">Within 3 months</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">25%</div>
+                <p class="mb-0">Lead Generation Increase</p>
+                <div class="text-muted mt-2">Quality leads</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">3.8x</div>
+                <p class="mb-0">Faster Load Time</p>
+                <div class="text-muted mt-2">Performance optimized</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card text-center p-4 rounded-4">
+                <div class="display-3 fw-bold mb-2">#1</div>
+                <p class="mb-0">Google Rankings</p>
+                <div class="text-muted mt-2">Key industry terms</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="section-step" id="tech">
+          <div class="d-flex align-items-center mb-5">
+            <div class="step-number">4</div>
+            <h2 class="text-primary mb-0">Technology Stack</h2>
+          </div>
+          <div class="row g-4 text-center">
+            <div class="col-4 col-md-2">
+              <div class="tech-stack-icon">
+                <img src="assets/bootstrap-icon.svg" alt="Bootstrap" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div class="tech-stack-icon">
+                <img src="assets/gsap-icon.svg" alt="GSAP" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-4 col-md-2">
+              <div class="tech-stack-icon">
+                <img src="assets/webpack-icon.svg" alt="Webpack" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll Progress
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercent = (scrollTop / scrollHeight) * 100;
+      document.querySelector('.progress-bar').style.width = scrollPercent + '%';
+    });
+
+    // Section Animations
+    document.querySelectorAll('.section-step').forEach((section) => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      observer.observe(section);
+    });
+
+    // Navigation Active State
+    const navLinks = document.querySelectorAll('.list-group-item');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 100;
+      navLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active-nav-item');
+        } else {
+          link.classList.remove('active-nav-item');
+        }
+      });
+    });
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

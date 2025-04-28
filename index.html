@@ -137,7 +137,8 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg fixed-top" data-bs-spy="scroll" data-bs-target="#navbarNav">
+
     <div class="container">
       <a class="navbar-brand text-white" href="#home">AR</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -161,36 +162,70 @@
     <canvas id="particles-canvas"></canvas>
 
     <!-- Hero -->
-    <section id="home" class="hero   text-light">
-      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-center">
-        <div class="mb-5 mb-lg-0 me-lg-5 text-center">
+   <!-- Enhanced Hero Section -->
+  <section id="home" class="hero text-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h1 class="display-3 fw-bold mb-4">Adnan Rajab</h1>
+          <div class="typed-container mb-4">
+            <h3 class="text-primary"><span id="typed"></span></h3>
+          </div>
+          <div class="d-flex gap-3">
+            <a href="#projects" class="btn btn-primary btn-lg">View Projects</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">Hire Me</a>
+          </div>
         </div>
-        <div class="hero-content">
-          <h1>Adnan Rajab</h1>
-          <h3><span id="typed"></span></h3>
-           
-
-          <a href="#projects" class="btn custom-hire-btn mt-3">View Work</a>
+        <div class="col-lg-6 text-center" data-aos="fade-left">
+          <img src="assets/hero-illustration.svg" alt="IoT Developer Illustration" class="img-fluid" style="max-width: 500px;">
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- About -->
-  <section id="about">
+  <<!-- Enhanced About Section -->
+  <section id="about" class="py-6">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-5">
-          <img src="assets/portrait.jpeg" alt=" Adnan Rajab" class="about-image">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5" data-aos="zoom-in">
+          <img src="assets/portrait.jpeg" alt="Adnan Rajab" class="img-fluid rounded-3 shadow-lg">
         </div>
-        <div class="col-lg-7">
-          <h2>About Me</h2>
-          <p>I'm <strong>Adnan Rajab</strong>, a B.Tech Information Engineering Technology student at NSU Islamabad. I blend hardware and software to create impactful automation solutions. My FYP is an <em>Android-Controlled Pick & Place Robotic Arm Vehicle</em>, showcasing embedded systems, Bluetooth control, and mobile integration for precise object handling.</p>
-          <p>With expertise in full-stack development, IoT, and UI/UX design, I deliver professional, scalable, and user-centric applications. I thrive on solving complex challenges and continuously expanding my technical skillset.</p>
-          <div class="stat-grid">
-            <div class="stat"><h3>6+</h3><span>Projects</span></div>
-            <div class="stat"><h3>3</h3><span>Core Technologies</span></div>
-            <div class="stat"><h3>85%</h3><span>Analytics Accuracy</span></div>
-            <div class="stat"><h3>1</h3><span>FYP Ongoing</span></div>
+        <div class="col-lg-7" data-aos="fade-up">
+          <h2 class="display-5 fw-bold mb-4">Innovating at the Intersection of Hardware & Software</h2>
+          <div class="d-flex gap-3 mb-4">
+            <div class="badge bg-primary py-2 px-3">IoT Specialist</div>
+            <div class="badge bg-secondary py-2 px-3">Full-Stack Developer</div>
+            <div class="badge bg-info py-2 px-3">UI/UX Designer</div>
+          </div>
+          <p class="lead mb-4">As a B.Tech Information Engineering Technology student at NSU Islamabad, I bridge the physical and digital worlds through innovative solutions. My current focus is developing an Android-Controlled Robotic Arm Vehicle with precision control systems.</p>
+          
+          <!-- Enhanced Stats Grid -->
+          <div class="row g-4">
+            <div class="col-6 col-md-3 text-center">
+              <div class="p-3 bg-light rounded-3">
+                <div class="h2 mb-1 text-primary">6+</div>
+                <div class="small">Projects Completed</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="p-3 bg-light rounded-3">
+                <div class="h2 mb-1 text-primary">3K+</div>
+                <div class="small">Lines of Code</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="p-3 bg-light rounded-3">
+                <div class="h2 mb-1 text-primary">98%</div>
+                <div class="small">Client Satisfaction</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+              <div class="p-3 bg-light rounded-3">
+                <div class="h2 mb-1 text-primary">4</div>
+                <div class="small">Tech Stack Mastery</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -211,8 +246,7 @@
               <span class="badge bg-primary">IoT</span>
             </div>
             <p>Real-time analytics with 85% accuracy and multi-tenant support for retail chains.</p>
-            <a href="#" class="btn btn-outline-light align-self-start">Case Study →</a>
-          </div>
+            <a href="case-study-footfall.html" class="btn btn-outline-light align-self-start">Case Study →</a>          </div>
         </article>
         <article class="project-card row g-0 flex-row-reverse">
           <div class="col-md-6"><img src="assets/ainovtech-website.png" alt="Ainovtech Website" loading="lazy"></div>
@@ -224,8 +258,7 @@
               <span class="badge bg-primary">SEO</span>
             </div>
             <p>Showcased SDR, RF & embedded solutions; boosted organic traffic by 40%.</p>
-            <a href="#" class="btn btn-outline-light align-self-start">Case Study →</a>
-          </div>
+            <a href="case-study-ainovtech.html" class="btn btn-outline-light align-self-start">Case Study →</a>          </div>
         </article>
         <article class="project-card row g-0">
           <div class="col-md-6"><img src="assets/vehicle-tracker.png" alt="Vehicle Tracking System" loading="lazy"></div>
@@ -237,8 +270,7 @@
               <span class="badge bg-primary">GPS</span>
             </div>
             <p>Encrypted real-time GPS monitoring with route history and RBAC.</p>
-            <a href="#" class="btn btn-outline-light align-self-start">Case Study →</a>
-          </div>
+            <a href="case-study-vehicle.html" class="btn btn-outline-light align-self-start">Case Study →</a>          </div>
         </article>
         <article class="project-card row g-0 flex-row-reverse">
           <div class="col-md-6"><img src="assets/robotic-arm-fyp.png" alt="Robotic Arm Vehicle" loading="lazy"></div>
@@ -250,8 +282,7 @@
               <span class="badge bg-primary">Bluetooth</span>
             </div>
             <p>Control six servos via HC-05 Bluetooth for precision pick & place.</p>
-            <a href="#" class="btn btn-outline-light align-self-start">Case Study →</a>
-          </div>
+            <a href="case-study-robotic-arm.html" class="btn btn-outline-light align-self-start">Case Study →</a>          </div>
         </article>
       </div>
     </section>
@@ -380,6 +411,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js" defer></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Main JS -->
   <script defer>
@@ -439,6 +471,11 @@
         });
       });
     }
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out'
+    });
   </script>
 </body>
 </html>
